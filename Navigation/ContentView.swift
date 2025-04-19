@@ -11,15 +11,36 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Root View :)")
+                Text("WELCOME 🏠")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color(hue: 0.359, saturation: 0.348, brightness: 0.485))
                 NavigationLink(destination: SecondView()){
-                    Text("Click Me")
+                    Image("about icon")
+                        .resizable(capInsets: EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0), resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fill)
+                        .padding(.all)
+                        .frame(width: /*@START_MENU_TOKEN@*/220.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/220.0/*@END_MENU_TOKEN@*/)
+                        
+                        
+                        
                 }
                 NavigationLink(destination: ThirdPage()){
-                        Text("Click me too")
+                    Image("contact icon")
+                        .resizable(resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fill)
+                        .padding(.all)
+                        .frame(width: 200.0, height: 200.0)
                     }
+                NavigationLink(destination:Help()){
+                    Image("help icon")
+                        .resizable(resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fill)
+                        .padding(.all)
+                        .frame(width: 200.0, height: 200.0)
+                }
             }
-            .navigationTitle("Home")
+            .navigationTitle("🏠 Home")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
         }
